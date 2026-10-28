@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="语音提词器如何处理麦克风音频、提词稿、语音识别和模型下载信息。">
+  <title>语音提词器隐私政策</title>
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { margin: 0; background: Canvas; color: CanvasText; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 72px; }
+    h1 { font-size: clamp(2rem, 7vw, 3rem); letter-spacing: -.04em; margin: 0 0 8px; }
+    h2 { font-size: 1.15rem; margin: 30px 0 8px; }
+    p, li { line-height: 1.75; }
+    .meta { color: color-mix(in srgb, CanvasText 58%, transparent); }
+    .summary { font-size: 1.08rem; padding: 18px 20px; border-radius: 16px; background: color-mix(in srgb, CanvasText 7%, transparent); }
+    a { color: #2878ff; }
+    section { margin-bottom: 48px; }
+    hr { border: 0; border-top: 1px solid color-mix(in srgb, CanvasText 14%, transparent); margin: 48px 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <section lang="zh-Hans">
+      <h1>语音提词器隐私政策</h1>
+      <p class="meta">生效日期：2026 年 10 月 29 日</p>
+      <p class="summary">语音提词器不设账号，也不运营接收录音或提词稿的服务器。默认的 Qwen 语音识别在设备本地运行；首次下载模型时，下载服务会收到完成请求所需的网络连接信息。若选择 Apple 系统识别，音频是否离开设备取决于该设备是否支持离线识别。</p>
+
+      <h2>麦克风与语音识别</h2>
+      <p>只有在你启用语音跟随并授予麦克风权限后，应用才会采集朗读音频。启用 iOS 语音处理（包括回声消除、自动增益和噪声处理）后，音频首先由设备上的 Apple 音频框架处理。</p>
+      <p>使用 Qwen3-ASR 时，音频和识别结果在设备本地处理。应用只在识别期间暂存短音频片段到内存，不会把录音、识别结果或提词稿上传给开发者或模型下载服务；停止识别后会清除这段临时音频。</p>
+      <p>如果你切换到 Apple 系统语音识别，应用会在系统识别器支持离线识别时要求音频留在设备上。如果当前语言或设备不支持离线识别，Apple 的系统服务可能需要将音频发送到 Apple 服务器处理。应用还会从提词稿中提取少量词语作为识别提示，系统识别服务可能一并使用这些词语。此时由 Apple 处理相关请求，并适用 <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a>。</p>
+
+      <h2>提词稿、设置与模型</h2>
+      <p>你创建或导入的提词稿、阅读进度和显示设置保存在设备上，或保存在你通过“文件”选择的位置。若你选择 iCloud Drive 或其他文件服务，同步和存储由相应服务提供者处理。应用不会将这些内容同步到开发者服务器。</p>
+      <p>语音模型首次使用时会从模型文件服务下载，并缓存在应用的设备存储中。当前默认使用 <a href="https://hf-mirror.com/">hf-mirror.com</a>；你可以在应用的跟随方式设置中关闭国内镜像，改由 <a href="https://huggingface.co/">Hugging Face</a> 提供文件。下载服务会收到你的 IP 地址、请求的模型文件及完成传输所需的请求信息；服务方可能依照自己的政策保存技术访问日志。下载模型不会把你的录音、识别文本或提词稿发送给这些服务。下载完成后，Qwen 识别可离线运行。你可以在应用内删除模型缓存。</p>
+
+      <h2>应用收集、跟踪与付款</h2>
+      <p>开发者不接收录音、识别文本、提词稿、账号资料或应用使用分析；应用没有广告、跨应用跟踪或第三方分析 SDK。为交付模型文件，模型下载服务可能处理并保留 IP 地址推断出的粗略地区以及下载请求等技术诊断信息；App Store 隐私标签会据此披露模型下载服务处理的连接信息。</p>
+      <p>本应用通过 App Store 付费下载，不含订阅或 App 内购买。交易由 Apple 处理，应用和开发者不会取得你的完整支付卡信息。</p>
+
+      <h2>你的控制方式</h2>
+      <p>你可以在 iOS“设置”中关闭麦克风或语音识别权限，在应用中选择 Qwen 本地识别或 Apple 系统识别，也可以关闭模型镜像、删除模型缓存、删除提词稿，或在“文件”中管理其保存位置。手动和匀速滚动模式不使用麦克风。</p>
+
+      <h2>联系与政策更新</h2>
+      <p>隐私问题可通过<a href="https://github.com/ll2090669538-stack/keepward-legal/issues">支持页面</a>联系开发者。该页面上的内容可能公开显示，请不要在公开留言中提供录音、提词稿或其他敏感信息。</p>
+      <p>如数据处理方式发生变化，本页面会更新生效日期和相关说明。</p>
+    </section>
+
+    <hr>
+
+    <section lang="en">
+      <h1>VoicePrompter Privacy Policy</h1>
+      <p class="meta">Effective date: October 29, 2026</p>
+      <p class="summary">VoicePrompter has no account system and does not operate a server that receives recordings or scripts. The default Qwen speech recognizer runs on your device. When downloading its model, the download service receives the network information needed to fulfill the request. With Apple Speech, whether audio leaves your device depends on offline recognition support.</p>
+
+      <h2>Microphone and speech recognition</h2>
+      <p>The app captures speech only after you enable voice following and grant microphone access. When enabled, iOS audio processing—including voice processing, echo cancellation, automatic gain control, and noise handling—runs through Apple’s audio frameworks on the device.</p>
+      <p>With Qwen3-ASR, audio and recognition results are processed locally. The app keeps only short audio segments in memory while recognition is active. It does not upload recordings, transcripts, or scripts to the developer or model download service, and clears the temporary audio when recognition stops.</p>
+      <p>If you switch to Apple’s system speech recognizer, the app requires on-device recognition when the recognizer supports it. If offline recognition is unavailable for the current device or language, Apple’s system service may need to send audio to Apple’s servers for processing. The app also extracts a small set of words from your script as recognition hints; the system recognizer may use those words with the request. Apple processes such requests under <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a>.</p>
+
+      <h2>Scripts, settings, and model files</h2>
+      <p>Scripts you create or import, reading progress, and display preferences are stored on your device or at a location you choose in Files. If you choose iCloud Drive or another file provider, that provider handles its own storage and syncing. The app does not sync this content to a developer server.</p>
+      <p>The speech model is downloaded on first use and cached in the app’s device storage. The default source is <a href="https://hf-mirror.com/">hf-mirror.com</a>. You can turn off the mirror in the app’s following settings to download from <a href="https://huggingface.co/">Hugging Face</a>. The selected download service receives your IP address, the requested model files, and request information needed to deliver them; it may retain technical access logs under its own policy. The app does not send your recordings, transcripts, or scripts to these services when downloading the model. Once downloaded, Qwen recognition can run offline. You can delete the model cache in the app.</p>
+
+      <h2>Collection, tracking, and payment</h2>
+      <p>The developer does not receive recordings, transcripts, scripts, account details, or app usage analytics. The app has no advertising, cross-app tracking, or third-party analytics SDK. To deliver model files, the model download service may process and retain coarse location inferred from your IP address and technical diagnostics such as download requests. The App Store privacy label discloses this connection information handled by the model download service.</p>
+      <p>The app is a paid App Store download and has no subscriptions or in-app purchases. Apple processes the transaction; the app and developer do not receive your full payment-card information.</p>
+
+      <h2>Your choices</h2>
+      <p>You can disable microphone or speech recognition access in iOS Settings; choose local Qwen recognition or Apple’s system recognizer; turn off the model mirror; delete the model cache; delete scripts; or manage their storage location in Files. Manual and automatic scrolling do not use the microphone.</p>
+
+      <h2>Contact and changes</h2>
+      <p>For privacy questions, contact the developer through the <a href="https://github.com/ll2090669538-stack/keepward-legal/issues">support page</a>. Messages there may be public, so do not include recordings, scripts, or other sensitive information in public posts.</p>
+      <p>If data practices change, this page will be updated with a new effective date and relevant information.</p>
+    </section>
+  </main>
+</body>
+</html>
